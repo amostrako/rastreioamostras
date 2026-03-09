@@ -1,0 +1,23 @@
+.tabela-analises {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.tabela-analises th {
+    background: #0b2d63;
+    color: #fff;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.tabela-analises td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+    text-align: center;
+}
+
+.tabela-analises tr:hover {
+    background: #f2f6ff;
+}

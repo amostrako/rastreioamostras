@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Análises</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="tema-quatrok">
+
+    <header class="topo-analises">
+        <div class="logo-analises">Logo 4K</div>
+
+        <div class="filtros-data">
+            <label>
+                Filtrar p/ Data
+                <input type="date" id="dataInicio">
+            </label>
+
+            <label>
+                Até
+                <input type="date" id="dataFim">
+            </label>
+        </div>
+    </header>
+
+    <main class="conteudo-analises">
+        <table class="tabela-analises">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Rastreio</th>
+                    <th>Cliente</th>
+                    <th>Representante</th>
+                    <th>Vendedor</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="listaAnalises">
+                <!-- linhas via JS -->
+            </tbody>
+        </table>
+    </main>
+
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="analises.js"></script>
+</body>
+
+</html>
