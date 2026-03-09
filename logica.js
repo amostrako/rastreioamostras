@@ -253,7 +253,7 @@ const senha = document.getElementById("senhaLogin").value;
 
     try {
 
-      const response = await fetch("https://rastreio-api-production.up.railway.app/docs", {
+      const response = await fetch("https://rastreio-api-production.up.railway.app/login", {
 
         method: "POST",
         headers: {
@@ -1127,6 +1127,7 @@ const usuarioLogin = normalizar(cod).trim();
   const btnAjuda = document.getElementById("btnAjudaSuporte");
   const ajudaChat = document.getElementById("ajudaChat");
   const ajudaEmail = document.getElementById("ajudaEmail");
+
 
 
 
