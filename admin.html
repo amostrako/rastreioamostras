@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=UTF-8,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+            <rect width='0' height='0' rx='20' fill='%23'/>
+            <text x='50%' y='90%' text-anchor='middle' font-size='100'>⚙️</text>
+            </svg>">
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Painel de Permissões</h2>
+
+        <!-- 🔥 NOVO BOTÃO -->
+        <div class="novo-usuario">
+            <button onclick="abrirModalUsuario()">➕ Incluir novo usuário</button>
+        </div>
+
+        <table class="tabela-usuarios">
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Permissões</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaUsuarios"></tbody>
+        </table>
+
+        <button class="btn-salvar" onclick="salvarPermissoesUI()">💾 Salvar Alterações</button>
+    </div>
+
+    <!-- 🔥 MODAL -->
+    <div id="modalUsuario" class="modal oculto">
+        <div class="modal-content">
+
+            <h3>Novo Usuário</h3>
+
+            <input type="text" id="modalNomeUsuario" placeholder="Digite o usuário">
+
+            <div class="modal-permissoes">
+                <label><input type="checkbox" value="rastreio_amostra"> Rastreio Amostras</label>
+                <label><input type="checkbox" value="rankprod"> RankProd</label>
+                <label><input type="checkbox" value="retorno_amostras"> Retornos</label>
+                <label><input type="checkbox" value="relatorio"> Relatório</label>
+                <label><input type="checkbox" value="analytics"> Analytics</label>
+                <label><input type="checkbox" value="admin"> Admin</label>
+                <label><input type="checkbox" class="chkSupervisao" value="V00"> V00</label>
+                <label><input type="checkbox" class="chkSupervisao" value="S50"> S50</label>
+                <label><input type="checkbox" class="chkSupervisao" value="S55"> S55</label>
+                <label><input type="checkbox" class="chkSupervisao" value="S00"> S00</label>
+            </div>
+
+            <div class="modal-acoes">
+                <button onclick="salvarNovoUsuario()">💾 Salvar</button>
+                <button onclick="fecharModalUsuario()">❌ Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="tela_inicio.js"></script>
+    <script src="admin.js"></script>
+
+    <script>
+        const usuario = localStorage.getItem("usuarioLogado");
+
+        if (!temPermissaoTela(usuario, "admin")) {
+            alert("Acesso restrito");
+            window.location.href = "tela_inicio.html";
+        }
+    </script>
+
+</body>
+
+</html>

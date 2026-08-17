@@ -1,0 +1,215 @@
+  /* ================= RESET / BASE ================= */
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--cor-fundo);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  /* input login */
+  #usuarioLogin,
+  #senhaLogin{
+    width: 200px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 3px solid #ffffff;
+    font-size: 14px;
+    text-align: left;
+    margin: 5px 0;
+  }
+
+  /* botão login */
+  #btnLoginVendedor {
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    background-color: #6b6b6b;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  #btnLoginVendedor:hover {
+    background-color: #5a5a5a;
+  }
+
+  #btnlogininicio{
+    margin-top: 50%;
+  }
+  /* erro login */
+#erroLogin {
+  font-size: 13px;
+  color: #ffeb3b;
+  text-align: center;
+  width: 100%;
+
+  margin-top: 8px;     /* 🔥 troca isso */
+  min-height: 18px;    /* 🔥 evita pulo */
+}
+
+  body:not(.tema-quatrok):not(.tema-luara):not(.tema-direto) {
+  background: #CFD6DF;
+}
+
+ #loginVendedor {
+    padding: 40px 20px;
+    max-width: 520px;
+    min-width: 320px;
+    width: 30%;
+    background: #373f49cc;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+ #btnEntrarLogin {
+  color: #ffffff;
+  font-size: 15px;
+  padding: 4px 20px;
+  background: rgba(255, 255, 255, 0.151);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+} 
+
+.input-group {
+  position: relative;
+  margin: 5px 0;
+  width: 200px;
+}
+
+.input-group input{
+  width:100%;
+  padding:14px 10px;
+  font-size:15px;
+
+  border:none;
+  border-bottom:2px solid #555;
+
+  background:transparent;
+  color:white;
+
+  outline:none;
+
+  text-align: center;
+
+  padding-right: 40px; /* espaço pro ícone sair */
+}
+
+.input-group label{
+
+  position:absolute;
+  left:10px;
+  top:12px;
+  text-align: center;
+
+  color:#CFD6DF;
+  font-size:14px;
+
+  pointer-events:none;
+
+  transition:0.25s ease;
+
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+
+  top:-8px;
+  font-size:12px;
+  color:#ffffff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btnEntrarLogin:hover{
+    background: #373f493d;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+
+.toggle-senha {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover igual sistema moderno */
+.toggle-senha:hover {
+  color: #fff;
+}
+
+/* Foco bonito */
+.input-group input:focus {
+  border-color: #002060;
+  box-shadow: 0 0 6px rgba(0, 32, 96, 0.4);
+}
+
+/* ================= LOGO LOGIN ================= */
+#logoMarca {
+  height: 50px;
+}
+
+/* BARRAS */
+.barra {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #373f493d;
+    /* azul parecido com o da logo */
+}
+
+/* BARRA SUPERIOR */
+.topo {
+    top: 70px;
+}
+
+/* BARRA INFERIOR */
+.baixo {
+    bottom: 70px;
+}
+
+.menu button.desativado {
+    opacity: 0.5;
+    cursor: not-allowed; /* 🔥 cursor de bloqueio */
+}
+
+/* opcional: efeito ao passar o mouse */
+.menu button.desativado:hover {
+    transform: none; /* evita animação de hover */
+    filter: brightness(0.9);
+}

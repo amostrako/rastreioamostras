@@ -1,0 +1,312 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.usuario {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.usuario h3 {
+    margin-bottom: 10px;
+}
+
+.permissoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+label {
+    background: #334155;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.novo-usuario {
+    margin-bottom: 20px;
+}
+
+.novo-usuario button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    transition: 0.2s;
+}
+
+.novo-usuario button:hover {
+    background: #1d4ed8;
+}
+
+.btn-salvar {
+    margin-top: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #16a34a;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.usuario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.usuario-card {
+    position: relative;
+    background: #12121bd7;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* botão excluir */
+.btn-excluir {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.2s;
+    color: #c0392b;
+}
+
+.btn-excluir:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.usuario-card .btn-excluir {
+    opacity: 0;
+}
+
+.usuario-card:hover .btn-excluir {
+    opacity: 1;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999;
+}
+
+/* esconder */
+.oculto {
+    display: none;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+    width: 450px;
+
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+/* input */
+.modal-content input[type="text"] {
+    width: 96%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+}
+
+/* lista permissões */
+.modal-permissoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-permissoes label {
+    background: #334155;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* botões */
+.modal-acoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-acoes button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-acoes button:first-child {
+    background: #16a34a;
+    color: white;
+}
+
+.modal-acoes button:last-child {
+    background: #ef4444;
+    color: white;
+}
+
+/* animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= TABELA ================= */
+
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: auto;
+}
+
+.tabela-usuarios thead {
+    background: #0f172a;
+}
+
+.tabela-usuarios th {
+    text-align: left;
+    padding: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+    border-bottom: 1px solid #334155;
+}
+
+.tabela-usuarios td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+}
+
+/* zebra leve */
+.tabela-usuarios tbody tr:nth-child(even) {
+    background: #172033;
+}
+
+/* hover estilo sistema */
+.tabela-usuarios tbody tr:hover {
+    background: #1d2a44;
+}
+
+/* usuário */
+.col-usuario {
+    font-weight: bold;
+}
+
+/* permissões compactas */
+.col-permissoes {
+    display: flex;
+    flex-wrap: nowrap;
+    /* 🔥 impede quebra */
+    gap: 6px;
+    overflow-x: auto;
+    /* 🔥 scroll horizontal se precisar */
+}
+
+.tabela-usuarios td,
+.tabela-usuarios th {
+    white-space: nowrap;
+}
+
+.col-usuario {
+    width: 180px;
+}
+
+.col-acoes {
+    width: 80px;
+}
+
+/* estilo tipo tag */
+.tag-permissao {
+    background: #334155;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ações */
+.col-acoes {
+    text-align: center;
+}
+
+/* botão excluir mais discreto */
+.col-acoes .btn-excluir {
+    position: static;
+    opacity: 0.7;
+}
+
+.col-acoes .btn-excluir:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.col-permissao-supervisao {
+    text-align: center;
+    width: 80px;
+}

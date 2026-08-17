@@ -1,0 +1,204 @@
+/* ================= BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100dvh;
+    background: #7286a7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;  /* atulizado para tirar barra de scroll lateral */
+
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ================= LOGO ================= */
+.area-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logoinicio {
+    width: 400px;
+    margin-bottom: -50px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(6px);
+
+    animation: fadeEntrada 0.6s ease forwards;
+    animation-delay: 0.05s;
+}
+
+/* ================= DIREITA ================= */
+.menu-area {
+    flex: 1;
+    max-width: 400px; /* alterado tamanho dos botoes */
+}
+
+.titulo {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(6px);
+
+    animation: fadeEntrada 0.6s ease forwards;
+    animation-delay: 0.15s;
+}
+
+/* ================= GRID ================= */
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: #c9c5c5;
+    border-radius: 12px;
+    border: 1px solid #dce3ed;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+
+    animation: fadeEntrada 1.9s ease forwards;
+}
+
+/* hover SAP azul */
+.card:hover {
+    border-color: #09121b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.863);
+    transform: translateY(-2px);
+}
+
+/* foco acessível */
+.card:focus {
+    outline: 2px solid #0a6ed1;
+    outline-offset: 2px;
+}
+
+/* clique */
+.card:active {
+    transform: scale(0.98);
+}
+
+/* ================= ÍCONE ================= */
+.card-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e3f6ff;
+    border-radius: 8px;
+
+    font-size: 28px; /* tamanho dos icones alterado */
+}
+
+/* ================= TEXTO ================= */
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text strong {
+    font-size: 15px;
+    color: #1f2d3d;
+}
+
+.card-text span {
+    font-size: 13px;
+    color: #6b7a90;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-area {
+        width: 100%;
+    }
+
+    .logoinicio {
+        max-width: 280px;
+    }
+}
+
+@keyframes fadeEntrada {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(6px);
+        color: transparent;
+        background: transparent;
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.grid-cards:nth-child(1) {
+    animation-delay: 0.20s;
+}
+
+.grid-cards:nth-child(2) {
+    animation-delay: 0.28s;
+}
+
+.grid-cards:nth-child(3) {
+    animation-delay: 0.36s;
+}
+
+.grid-cards:nth-child(4) {
+    animation-delay: 0.44s;
+}
+
+.grid-cards:nth-child(5) {
+    animation-delay: 0.52s;
+}
+
+.grid-cards:nth-child(6) {
+    animation-delay: 0.60s;
+}

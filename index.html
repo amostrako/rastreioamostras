@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="tela_login.css">
+</head>
+
+<body>
+
+<div class="barra topo"></div> <!-- barra superior -->
+<section id="loginVendedor" class="box-busca">
+    
+    <header class="topo">
+        <img 
+          id="logoMarca" 
+          src="Imagens/Logo - Grupo 4k - Branco.png" 
+          class="logo" 
+          alt="Logo da empresa"
+        />
+    </header>
+
+    <h3 style="text-align:center;color:white;font-size: 20px;">
+        Login do Vendedor
+    </h3>
+
+    <form id="formLogin">
+
+        <div class="input-group">
+            <input id="usuarioLogin" type="text" required>
+            <label for="usuarioLogin">Usuário Protheus</label>
+        </div>
+
+        <div class="input-group">
+            <input id="senhaLogin" type="password" required>
+            <label for="senhaLogin">Senha</label>
+            <button type="button" class="toggle-senha" id="toggleSenha">
+        <!-- Olho aberto -->
+        <svg id="iconEye" xmlns="http://www.w3.org/2000/svg" 
+            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+        </svg>
+
+        <!-- Olho fechado -->
+        <svg id="iconEyeOff" xmlns="http://www.w3.org/2000/svg" 
+            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-5.94"/>
+            <path d="M1 1l22 22"/>
+        </svg>
+    </button>
+        </div>
+
+        <button id="btnEntrarLogin" type="submit">
+            Entrar
+        </button>
+
+        <div id="erroLogin"></div>
+
+    </form>
+    <div class="barra baixo"></div> <!-- barra inferior -->
+</section>
+
+<script src="config.js"></script>
+<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="tela_login.js"></script>
+
+</body>
+</html>
