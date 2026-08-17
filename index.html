@@ -1,177 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rastreamento de Amostras</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="tela_login.css">
 </head>
 
-  
 <body>
 
-  <!-- ================= OVERLAY DETALHES ================= -->
-  <div id="overlayDetalhes" class="overlay oculto">
-    <div class="painel-detalhes">
-      <button class="fechar" type="button" onclick="fecharDetalhes()">✕</button>
-      <div id="conteudoDetalhes"></div>
-    </div>
-  </div>
-
-  <div id="overlayNotificacoes" class="overlay oculto">
-  <div class="painel-detalhes">
-    <button class="fechar" onclick="fecharNotificacoes()">✕</button>
-    <h3>Pedidos Pendentes</h3>
-    <div id="listaNotificacoes"></div>
-  </div>
-</div>
-
-
-  <!-- ================= MODAL LIMPAR ================= -->
-  <div id="modalLimpar" class="modal oculto">
-    <div class="modal-box">
-      <p>Deseja limpar todos os filtros?</p>
-      <div class="modal-botoes">
-        <button id="confirmarLimpar">Sim</button>
-        <button id="cancelarLimpar">Cancelar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= TOPO ================= -->
-  
-  
-  <!-- ================= CONTEÚDO ================= -->
-  <main class="container">
-
-    <!-- ================= LOGIN ================= -->
-
+<div class="barra topo"></div> <!-- barra superior -->
+<section id="loginVendedor" class="box-busca">
     
-   <section id="loginVendedor" class="box-busca">
-  <header class="topo">
-    <img id="logoMarca" src="Logo - Grupo 4k - Branco.png" class="logo" alt="Logo da empresa" />
-  </header>
+    <header class="topo">
+        <img 
+          id="logoMarca" 
+          src="Imagens/Logo - Grupo 4k - Branco.png" 
+          class="logo" 
+          alt="Logo da empresa"
+        />
+    </header>
 
-  <h3 style="text-align:center;color:white;">Login do Vendedor</h3>
+    <h3 style="text-align:center;color:white;font-size: 20px;">
+        Login do Vendedor
+    </h3>
 
- <form id="formLogin">
+    <form id="formLogin">
 
-<input
-id="usuarioLogin"
-type="text"
-placeholder="Usuário Protheus"
-required
->
-
-<input
-id="senhaLogin"
-type="password"
-placeholder="Senha"
-required
->
-
-<button type="submit">
-Entrar
-</button>
-
-</form>
-
-<button id="btnConfirmarCodigo">
-Confirmar
-</button>
-
-</div>
-
-  <div id="erroLogin" style="color:#ffeb3b;text-align:center;font-size:13px;"></div>
-</section>
-
-
-</div>
-    <!-- ================= SISTEMA ================= -->
-    <section id="sistema" class="oculto">
-
-      <!-- ================= TOPO LAYOUT ================= -->
-      <section class="topo-layout">
-
-        <!-- ================= BUSCA / INFO ================= -->
-        <div class="box-busca oculto" id="boxFiltros">
-
-          <button id="btnNotificacoes" class="btn-notificacao oculto" title="Pedidos pendentes">
-  🔔 <span id="contadorNotificacoes" class="badge">0</span>
-</button>
-
-
-  <img
-    id="logoMarcaBox"
-    class="logo-marca-box"
-    alt="Logo da marca"
-  />
-
-  <div id="boasVindas" class="boas-vindas"></div>
-
-          <div class="tipo-busca-wrapper">
-  <button id="btnTipoBusca" class="btn-tipo-busca" disabled>
-    Pesquisar por:
-    <strong id="labelTipoBusca">Nota Fiscal</strong>
-    <span class="seta">▾</span>
-  </button>
-
-  <div id="menuTipoBusca" class="menu-tipo-busca oculto">
-    <div class="menu-item ativo" data-tipo="nota">📄 Nota Fiscal</div>
-    <div class="menu-item" data-tipo="pedido">📦 Pedido</div>
-    <div class="menu-item" data-tipo="cliente">👤 Nº Cliente</div>
-    <div class="menu-item" data-tipo="representante">👤 Nº Representante</div>
-  </div>
-
-  <!-- mantém o select invisível para não quebrar o JS -->
-  <select id="tipoBusca" style="display:none">
-    <option value="nota" selected></option>
-    <option value="pedido"></option>
-    <option value="cliente"></option>
-    <option value="representante"></option>
-  </select>
-</div>
-
-
-          <input
-            id="filtroBusca"
-            type="text"
-            placeholder="Buscar por Nota Fiscal ou Pedido"
-            disabled
-          />
-
-          <div id="contador" class="contador"></div>
-
-          <!-- TROCAR VENDEDOR (ÁREA VERMELHA) -->
-          <button id="trocarVendedor" type="button" class="oculto trocar-vendedor">
-          🔄 Trocar vendedor
-          </button>
-          <!-- BOTÃO ANALISES (OCULTO POR PADRÃO) -->
-          <button id="btnAnalises" class="btn-analises oculto">
-            📊 Análises
-          </button>
-
-
-
+        <div class="input-group">
+            <input id="usuarioLogin" type="text" required>
+            <label for="usuarioLogin">Usuário Protheus</label>
         </div>
 
+        <div class="input-group">
+            <input id="senhaLogin" type="password" required>
+            <label for="senhaLogin">Senha</label>
+            <button type="button" class="toggle-senha" id="toggleSenha">
+        <!-- Olho aberto -->
+        <svg id="iconEye" xmlns="http://www.w3.org/2000/svg" 
+            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+        </svg>
 
-        <!-- ================= GRÁFICO ================= -->
-        <div id="painelGrafico" class="resumo-card oculto"></div>
+        <!-- Olho fechado -->
+        <svg id="iconEyeOff" xmlns="http://www.w3.org/2000/svg" 
+            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-5.94"/>
+            <path d="M1 1l22 22"/>
+        </svg>
+    </button>
+        </div>
 
-      </section>
+        <button id="btnEntrarLogin" type="submit">
+            Entrar
+        </button>
 
-      <!-- ================= RESULTADOS ================= -->
-      <section id="resultado" class="lista-cards oculto"></section>
+        <div id="erroLogin"></div>
 
-    </section>
+    </form>
+    <div class="barra baixo"></div> <!-- barra inferior -->
+</section>
 
-  </main>
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="logica.js" defer></script>
+<script src="config.js"></script>
+<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="tela_login.js"></script>
 
 </body>
 </html>
-
